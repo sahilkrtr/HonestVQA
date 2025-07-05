@@ -1,72 +1,70 @@
-# HonestVQA
+# HonestVQA: Research Pipeline for Visual Question Answering
 
-📚 Datasets
+This repository provides a clean, research-focused pipeline for multimodal Visual Question Answering (VQA) on three datasets (SpDocVQA, InfographicsVQA, SROIE) using LayoutLMv3, DONUT, and UDOP models. All scripts are set up for real experiments on the full datasets—no sample/test logic remains.
 
-The following datasets can be accessed from their respective official sources:
+## Quick Start
 
-    **SpDocVQA**
-    A challenging benchmark for document visual question answering with complex layouts and text.
-    [Access SpDocVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
+1. **Install dependencies**
+   ```bash
+   python3 -m venv venv310_new
+   source venv310_new/bin/activate  # or .\venv310_new\Scripts\activate.bat on Windows
+   pip install -r requirements.txt
+   ```
 
-    **InfographicsVQA**
-    A comprehensive dataset for infographic visual question answering with diverse visual elements.
-    [Access InfographicsVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
+2. **Train a model**
+   ```bash
+   python train.py --config configs/layoutlmv3_spdocvqa.yaml
+   ```
 
-    **SROIE**
-    A dataset focused on receipt understanding and information extraction from scanned documents.
-    [Access SROIE](https://rrc.cvc.uab.es/?ch=13)
+3. **Evaluate a model**
+   ```bash
+   python eval.py --config configs/layoutlmv3_spdocvqa.yaml
+   ```
 
-🧠 Multimodal Models
+4. **Run the full pipeline**
+   ```bash
+   python run_experiments.py --config configs/layoutlmv3_spdocvqa.yaml
+   ```
 
-The following multimodal models can be downloaded from Hugging Face:
+5. **Visualize results**
+   ```bash
+   python visualize_results.py --results_dir experiment_results
+   ```
 
-    **LayoutLMv3**
-    [Download from Hugging Face](https://huggingface.co/microsoft/layoutlmv3-base)
+## Key Features
+- Full dataset training and evaluation (no sample/test code)
+- HonestVQA framework: uncertainty, alignment, contrastive loss
+- Novel metrics: H-Score, ECI, IoU
+- Cross-domain, ablation, and computational analysis
+- Modular configs for all models/datasets
 
-    **DONUT**
-    [Download from Hugging Face](https://huggingface.co/naver-clova-ix/donut-base)
+## Configuration Example
+```yaml
+model_type: layoutlmv3
+dataset_type: spdocvqa
+dataset: spdocvqa_merged_train.jsonl
+val_dataset: spdocvqa_merged_val.jsonl
+images_dir: spdocvqa/spdocvqa_images
+batch_size: 8
+max_length: 512
+epochs: 10
+learning_rate: 5e-5
+```
 
-    **UDOP**
-    [Download from Hugging Face](https://huggingface.co/microsoft/udop-large)
+## Supported Models & Datasets
 
-🛠️ Usage: train.py
+### Datasets
+- **SpDocVQA**: [Access SpDocVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
+- **InfographicsVQA**: [Access InfographicsVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads) (Task 3)
+- **SROIE**: [Access SROIE](https://rrc.cvc.uab.es/?ch=13)
 
-The script train.py is designed to train multimodal visual question answering models on the listed datasets. It can be used with any of the supported models to train and fine-tune, including:
+### Models
+- **LayoutLMv3**: [Download from Hugging Face](https://huggingface.co/microsoft/layoutlmv3-base)
+- **DONUT**: [Download from Hugging Face](https://huggingface.co/naver-clova-ix/donut-base)
+- **UDOP**: [Download from Hugging Face](https://huggingface.co/microsoft/udop-large)
 
-    ✅ Model Training
-    📊 Validation
-    🧱 Checkpointing
-    ⚙️ Hyperparameter Tuning
+## License
+MIT
 
-### How to Use
+For details, see configs/ and the paper. For questions, open an issue or contact the authors. 
 
-Simply pass your chosen model and dataset configuration to train.py to start training. The script supports:
-
-    Any of the models listed above (e.g., LayoutLMv3, DONUT, UDOP)
-    Any of the supported datasets (e.g., SpDocVQA, InfographicsVQA, SROIE)
-
-🔁 Follow-up Processing and Evaluation
-
-Once models have been trained using train.py, you can proceed with evaluation and analysis using any of the following scripts:
-
-    `eval.py`
-    `run_experiments.py`
-    `visualize_results.py`
-
-These scripts are designed to evaluate model performance and analyze results across different datasets and model configurations.
-
-📈 Evaluation
-
-After training any of the models, use eval.py to assess the performance of the trained models.
-
-    ⚠️ Note: Make sure you have the appropriate access to the evaluation metrics and datasets used for assessment. These include:
-
-* Exact Match Accuracy
-* F1 Score
-* H-Score (Honesty Score)
-* ECI (Expected Calibration Index)
-* IoU (Intersection over Union)
-
-These evaluators are used to provide comprehensive assessment of model performance in terms of accuracy, calibration, and honesty.
-
-🖥️ Note on Performance Variability: Evaluation results may vary by up to ±10% depending on your hardware configuration, especially GPU type, memory bandwidth, and compute environment. This margin reflects differences in numerical precision, runtime optimizations, and stability of training dynamics during model training and evaluation.
