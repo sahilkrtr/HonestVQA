@@ -55,7 +55,7 @@ learning_rate: 5e-5
 
 ### Datasets
 - **SpDocVQA**: [Access SpDocVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
-- **InfographicsVQA**: [Access InfographicsVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads) (Task 3)
+- **InfographicsVQA**: [Access InfographicsVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads) 
 - **SROIE**: [Access SROIE](https://rrc.cvc.uab.es/?ch=13)
 
 ### Models
