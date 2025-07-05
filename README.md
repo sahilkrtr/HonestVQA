@@ -6,11 +6,11 @@ The following datasets can be accessed from their respective official sources:
 
     **SpDocVQA**
     A challenging benchmark for document visual question answering with complex layouts and text.
-    [Access SpDocVQA](https://github.com/ibm/spdocvqa)
+    [Access SpDocVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
 
     **InfographicsVQA**
     A comprehensive dataset for infographic visual question answering with diverse visual elements.
-    [Access InfographicsVQA](https://github.com/google-research-datasets/infographicvqa)
+    [Access InfographicsVQA](https://rrc.cvc.uab.es/?ch=17&com=downloads)
 
     **SROIE**
     A dataset focused on receipt understanding and information extraction from scanned documents.
