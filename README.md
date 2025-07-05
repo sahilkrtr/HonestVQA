@@ -63,8 +63,5 @@ learning_rate: 5e-5
 - **DONUT**: [Download from Hugging Face](https://huggingface.co/naver-clova-ix/donut-base)
 - **UDOP**: [Download from Hugging Face](https://huggingface.co/microsoft/udop-large)
 
-## License
-MIT
 
-For details, see configs/ and the paper. For questions, open an issue or contact the authors. 
 
