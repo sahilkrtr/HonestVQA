@@ -1,0 +1,10 @@
+model_type: donut
+dataset_type: infographicsvqa
+dataset: infographicsvqa_merged_train.jsonl
+val_dataset: infographicsvqa_merged_val.jsonl
+images_dir: infographicsvqa/infographicsvqa_images
+batch_size: 8
+max_length: 512
+epochs: 10
+learning_rate: 5e-5
+output_dir: outputs/test_donut_infographicsvqa/ 

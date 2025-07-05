@@ -1,0 +1,10 @@
+model_type: layoutlmv3
+dataset_type: sroie
+dataset: sroie/sroie/sroie_train_formatted.jsonl
+val_dataset: sroie/sroie/sroie_test_formatted.jsonl
+images_dir: sroie/images
+batch_size: 8
+max_length: 512
+epochs: 10
+learning_rate: 5e-5
+output_dir: outputs/test_layoutlmv3_sroie/ 

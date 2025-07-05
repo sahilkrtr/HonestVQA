@@ -1,0 +1,9 @@
+transformers>=4.30.0
+torch>=1.13.0
+sentence-transformers>=2.2.0
+yaml
+scikit-learn
+Pillow
+datasets
+matplotlib
+seaborn 
