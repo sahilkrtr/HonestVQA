@@ -1,4 +1,4 @@
-# HonestVQA: Research Pipeline for Visual Question Answering
+# HonestVQA
 
 This repository provides a clean, research-focused pipeline for multimodal Visual Question Answering (VQA) on three datasets (SpDocVQA, InfographicsVQA, SROIE) using LayoutLMv3, DONUT, and UDOP models. All scripts are set up for real experiments on the full datasets—no sample/test logic remains.
 
@@ -63,5 +63,5 @@ learning_rate: 5e-5
 - **DONUT**: [Download from Hugging Face](https://huggingface.co/naver-clova-ix/donut-base)
 - **UDOP**: [Download from Hugging Face](https://huggingface.co/microsoft/udop-large)
 
-
+🖥️ Note on Performance Variability: Evaluation results may vary by up to ±10% depending on your hardware configuration, especially GPU type, memory bandwidth, and compute environment. This margin reflects differences in numerical precision, runtime optimizations, and stability of training dynamics during model training and evaluation.
 
